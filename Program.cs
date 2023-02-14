@@ -3,6 +3,7 @@
 int userchoice = GetUserChoice();
 if (userchoice == 1) Drawnewtriangle(userchoice);
 if (userchoice == 2) Drawoldtriangle(userchoice);
+if (userchoice == 3) System.Console.WriteLine("No Triangles Today :(");
 
 // **** end main ****
 
