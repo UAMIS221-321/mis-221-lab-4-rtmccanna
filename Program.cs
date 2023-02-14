@@ -33,12 +33,10 @@ static void Drawnewtriangle(int userchoice) {
     int height = rand.Next(3,9);
     System.Console.WriteLine($"Your Triangle's Height is {height}!");
     for (int i = 0; i < height; i++){
-        if (i <= height) System.Console.WriteLine("* ");
         for (int j = -1; j < i; j++){
-            if (j >= height) System.Console.WriteLine("Enjoy your triangle!");
-            else
-            if (j < height)System.Console.Write("* ");
+            System.Console.Write("* ");
         }
+        System.Console.WriteLine();
     }
 }
 
@@ -46,5 +44,13 @@ static void Drawoldtriangle(int userchoice) {
     Random rand = new Random();
     int height = rand.Next(3,9);
     System.Console.WriteLine($"Your Triangle's Height is {height}!");
-    
+    for (int i = 0; i < height; i++){
+        for (int j = -1; j < i; j++){
+            Random rander = new Random();
+            int draw = rander.Next(2);
+            if(draw == 1) System.Console.Write("  ");
+            else Console.Write("* ");
+        }
+        System.Console.WriteLine();
+    }   
 }
