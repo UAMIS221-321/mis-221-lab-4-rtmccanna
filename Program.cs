@@ -1,8 +1,8 @@
 ﻿// **** start main ****
 
 int userchoice = GetUserChoice();
-Gettriangleheight();
-Drawtriangle(userchoice);
+if (userchoice == 1) Drawnewtriangle(userchoice);
+if (userchoice == 2) Drawoldtriangle(userchoice);
 
 // **** end main ****
 
@@ -14,7 +14,7 @@ static int GetUserChoice() {
         int.Parse(userChoice);
     }
     else return 0;
-    return int.Parse(Console.ReadLine());
+    return int.Parse(userChoice);
 }
 
 static void DisplayMenu() {
@@ -28,35 +28,23 @@ static bool IsValidChoice(string userInput) {
     return false;
 }
 
-static void Gettriangleheight(){
+static void Drawnewtriangle(int userchoice) {
+    Random rand = new Random();
+    int height = rand.Next(3,9);
+    System.Console.WriteLine($"Your Triangle's Height is {height}!");
+    for (int i = 0; i < height; i++){
+        if (i <= height) System.Console.WriteLine("* ");
+        for (int j = -1; j < i; j++){
+            if (j >= height) System.Console.WriteLine("Enjoy your triangle!");
+            else
+            if (j < height)System.Console.Write("* ");
+        }
+    }
+}
+
+static void Drawoldtriangle(int userchoice) {
     Random rand = new Random();
     int height = rand.Next(3,9);
     System.Console.WriteLine($"Your Triangle's Height is {height}!");
     
 }
-
-static void Drawtriangle(int userchoice, int height) {
-    if (userchoice == 1) Drawnewtriangle(height);
-    else
-    if (userchoice == 2) Drawoldtriangle(height);
-    else
-    if (userchoice == 3) Wavebye(height);
-}
-
-Drawnewtriangle(height) {
-    for(int i = 0; i = height; i++) {
-        System.Console.WriteLine("* \n");
-        for(int j = 1; j = i; j++) {
-            System.Console.WriteLine("* \n");
-        }
-    }
-}
-
-Drawoldtriangle(height) {
-
-}
-
-Wavebye(height) {
-
-}
-
